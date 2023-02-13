@@ -9,10 +9,12 @@ specifiers:
   '@umijs/max': ^4.0.51
   antd: ^5.0.0
   husky: ^8.0.1
+  js-cookie: ^3.0.1
   lint-staged: ^13.0.3
   prettier: ^2.7.1
   prettier-plugin-organize-imports: ^2
   prettier-plugin-packagejson: ^2
+  react-message-popup: ^1.0.0
   tailwindcss: ^3
   typescript: ^4.1.2
 
@@ -22,6 +24,8 @@ dependencies:
   '@suemor/prettier': 1.1.0
   '@umijs/max': 4.0.51_upln644bkpvnhepeneg4667hum
   antd: 5.2.0
+  js-cookie: 3.0.1
+  react-message-popup: 1.0.0
 
 devDependencies:
   '@types/react': 18.0.27
@@ -7370,6 +7374,11 @@ packages:
       supports-color: 8.1.1
     dev: false
 
+  /js-cookie/3.0.1:
+    resolution: {integrity: sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==}
+    engines: {node: '>=12'}
+    dev: false
+
   /js-sdsl/4.3.0:
     resolution: {integrity: sha512-mifzlm2+5nZ+lEcLJMoBK0/IH/bDg8XnJfd/Wq6IP+xoCjLZsTOnV2QpxlVbX9bMnkl5PdEjNtBJ9Cj1NjifhQ==}
     dev: false
@@ -10108,6 +10117,13 @@ packages:
 
   /react-merge-refs/1.1.0:
     resolution: {integrity: sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==}
+    dev: false
+
+  /react-message-popup/1.0.0:
+    resolution: {integrity: sha512-fDtLQp29u6nhxtRTfc3f/DBOSLDt8yuAROylv3OQcuStFuKqJnDgmFaFPzkgYf+64x8SsiC7ADQpfZJx6dK8/g==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
     dev: false
 
   /react-redux/8.0.5_c6sxghgvjwu6h3yda6o5hgghsy:
