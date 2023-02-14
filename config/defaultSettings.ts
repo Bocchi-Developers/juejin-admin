@@ -16,6 +16,7 @@ const Settings: ProLayoutProps & {
   fixSiderbar: true,
   colorWeak: false,
   title: '掘金后台',
+
   pwa: true,
   logo: '/logo.svg',
   iconfontUrl: '',

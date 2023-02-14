@@ -12,11 +12,13 @@ import { UserModel } from './types/api/user'
 
 const loginPath = '/login'
 
-export async function getInitialState(): Promise<{
+export interface InitialStateType {
   currentUser?: UserModel
   settings?: Partial<LayoutSettings>
   fetchUserInfo?: () => Promise<UserModel | undefined>
-}> {
+}
+
+export async function getInitialState(): Promise<InitialStateType> {
   const fetchUserInfo = async () => {
     try {
       const msg = await queryCurrentUser()
@@ -58,6 +60,9 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
     // unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态
     ...initialState?.settings,
+    menu: {
+      defaultOpenAll: true,
+    },
   }
 }
 

@@ -6,9 +6,27 @@
     component: './Login',
   },
   {
-    path: '/home',
-    name: 'home',
-    icon: 'smile',
-    component: './Home',
+    path: '/posts',
+    name: '文章',
+    icon: 'EditOutlined',
+    routes: [
+      {
+        path: '/posts/view',
+        name: '管理',
+        component: './Posts/view',
+      },
+      {
+        path: '/posts/edit',
+        name: '编写',
+        icon: 'EditOutlined',
+        component: './Posts/edit',
+      },
+      {
+        path: '/posts/category',
+        name: '分类',
+        access: 'canAdmin',
+        component: './Posts/category',
+      },
+    ],
   },
 ]

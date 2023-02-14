@@ -4,6 +4,7 @@ specifiers:
   '@ant-design/icons': ^4.7.0
   '@ant-design/pro-components': ^2.0.1
   '@suemor/prettier': ^1.1.0
+  '@types/js-cookie': ^3.0.2
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
   '@umijs/max': ^4.0.51
@@ -22,6 +23,7 @@ dependencies:
   '@ant-design/icons': 4.8.0
   '@ant-design/pro-components': 2.3.54_antd@5.2.0
   '@suemor/prettier': 1.1.0
+  '@types/js-cookie': 3.0.2
   '@umijs/max': 4.0.51_upln644bkpvnhepeneg4667hum
   antd: 5.2.0
   js-cookie: 3.0.1
@@ -3446,6 +3448,10 @@ packages:
     resolution: {integrity: sha512-c3mAZEuK0lvBp8tmuL74XRKn1+y2dcwOUpH7x4WrF6gk1GIgiluDRgMYQtw2OFcBvAJWlt6ASU3tSqxp0Uu0Aw==}
     dependencies:
       '@types/istanbul-lib-report': 3.0.0
+    dev: false
+
+  /@types/js-cookie/3.0.2:
+    resolution: {integrity: sha512-6+0ekgfusHftJNYpihfkMu8BWdeHs9EOJuGcSofErjstGPfPGEu9yTu4t460lTzzAMl2cM5zngQJqPMHbbnvYA==}
     dev: false
 
   /@types/json-schema/7.0.11:
