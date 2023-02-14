@@ -29,4 +29,31 @@
       },
     ],
   },
+  {
+    path: '/ad',
+    name: '广告',
+    access: 'canAdmin',
+    icon: 'NotificationOutlined',
+    component: './Ad',
+  },
+  {
+    path: '/config',
+    name: '网站配置',
+    access: 'canAdmin',
+    icon: 'ToolOutlined',
+    component: './Config',
+  },
+  {
+    path: '/user',
+    name: '用户',
+    access: 'canAdmin',
+    icon: 'IdcardOutlined',
+    component: './User',
+  },
+  {
+    path: '/',
+    redirect: '/user',
+  },
 ]
+
+// <IdcardOutlined />
