@@ -8,15 +8,9 @@ import defaultSettings from '../config/defaultSettings'
 import RightContent from './components/RightContent'
 import { errorConfig } from './services/requestErrorConfig'
 import { queryCurrentUser } from './services/user'
-import { UserModel } from './types/api/user'
+import { InitialStateType } from './types/initial'
 
 const loginPath = '/login'
-
-export interface InitialStateType {
-  currentUser?: UserModel
-  settings?: Partial<LayoutSettings>
-  fetchUserInfo?: () => Promise<UserModel | undefined>
-}
 
 export async function getInitialState(): Promise<InitialStateType> {
   const fetchUserInfo = async () => {

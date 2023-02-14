@@ -1,5 +1,6 @@
 {
   "name": "juejin-admin",
+  "license": "MIT",
   "version": "0.0.1",
   "private": "false",
   "homepage": "https://github.com/Bocchi-Developers/juejin-admin#readme",
@@ -10,7 +11,20 @@
     "type": "git",
     "url": "git+https://github.com/Bocchi-Developers/juejin-admin.git"
   },
-  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git",
+      "useEmoji": true
+    }
+  },
+  "bump": {
+    "leading": [
+      "pnpm build"
+    ],
+    "publish": false,
+    "tag": true,
+    "commit_message": "chore(release): bump @Bocchi-Developers/juejin-admin to v${NEW_VERSION}"
+  },
   "scripts": {
     "build": "max build",
     "dev": "max dev",
@@ -18,15 +32,18 @@
     "postinstall": "max setup",
     "prepare": "husky install",
     "setup": "max setup",
-    "start": "max preview"
+    "start": "max preview",
+    "release": "vv"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@ant-design/pro-components": "^2.0.1",
+    "@innei/bump-version": "^1.5.9",
     "@suemor/prettier": "^1.1.0",
     "@types/js-cookie": "^3.0.2",
     "@umijs/max": "^4.0.51",
     "antd": "^5.0.0",
+    "cz-git": "^1.4.1",
     "js-cookie": "^3.0.1",
     "react-message-popup": "^1.0.0"
   },
