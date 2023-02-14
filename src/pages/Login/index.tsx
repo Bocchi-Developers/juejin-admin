@@ -1,16 +1,35 @@
 import { Button, Form, Input } from 'antd'
 import React from 'react'
+import { flushSync } from 'react-dom'
 import message from 'react-message-popup'
 
-import { ILoginForm, login } from '@/services/login'
+import { ILoginForm, login } from '@/services/user'
 import { setToken } from '@/utils/cookie'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
+import { history } from '@umijs/max'
+import { useModel } from '@umijs/max'
 
 const Login: React.FC = () => {
+  const { initialState, setInitialState } = useModel('@@initialState')
+
+  const fetchUserInfo = async () => {
+    const userInfo = await initialState?.fetchUserInfo?.()
+    if (userInfo) {
+      flushSync(() => {
+        setInitialState((s) => ({
+          ...s,
+          currentUser: userInfo,
+        }))
+      })
+    }
+  }
+
   const onSubmit = async (values: ILoginForm) => {
     const data = await login(values)
     setToken(data.token)
+    await fetchUserInfo()
     message.success('登录成功')
+    history.push('/')
   }
 
   return (
