@@ -27,12 +27,12 @@
   },
   "scripts": {
     "build": "max build",
-    "dev": "max dev",
+    "dev": "cross-env UMI_ENV=dev max dev",
     "format": "prettier --cache --write .",
     "postinstall": "max setup",
     "prepare": "husky install",
     "setup": "max setup",
-    "start": "max preview",
+    "start": "cross-env UMI_ENV=pre max preview",
     "release": "vv"
   },
   "dependencies": {
@@ -50,6 +50,7 @@
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "cross-env": "^7.0.3",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",

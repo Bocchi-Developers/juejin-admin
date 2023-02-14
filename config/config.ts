@@ -3,6 +3,8 @@ import { defineConfig } from '@umijs/max'
 import defaultSettings from './defaultSettings'
 import routes from './routes'
 
+const { UMI_ENV } = process.env
+const isDev = UMI_ENV === 'dev'
 export default defineConfig({
   title: '掘金后台',
   antd: {},
@@ -20,6 +22,8 @@ export default defineConfig({
   npmClient: 'pnpm',
   tailwindcss: {},
   define: {
-    API_URL: 'http://127.0.0.1:7498',
+    API_URL: isDev
+      ? 'http://127.0.0.1:7498'
+      : 'https://api-juejin.suemor.com/api/v1',
   },
 })
