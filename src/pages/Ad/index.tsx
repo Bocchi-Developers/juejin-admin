@@ -1,5 +1,11 @@
+import { TableList } from './TableList'
+
 const Ad = () => {
-  return <div>Ad</div>
+  return (
+    <div>
+      <TableList />
+    </div>
+  )
 }
 
 export default Ad

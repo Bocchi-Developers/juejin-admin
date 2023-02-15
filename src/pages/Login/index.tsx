@@ -3,17 +3,18 @@ import React from 'react'
 import { flushSync } from 'react-dom'
 import message from 'react-message-popup'
 
-import { ILoginForm, login } from '@/services/user'
+import type { ILoginForm } from '@/services/user'
+import { login } from '@/services/user'
 import { setToken } from '@/utils/cookie'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { history } from '@umijs/max'
-import { useModel } from '@umijs/max'
+import { history, useModel } from '@umijs/max'
 
 const Login: React.FC = () => {
   const { initialState, setInitialState } = useModel('@@initialState')
 
   const fetchUserInfo = async () => {
     const userInfo = await initialState?.fetchUserInfo?.()
+    console.log(userInfo, '???')
     if (userInfo) {
       flushSync(() => {
         setInitialState((s) => ({
