@@ -1,3 +1,4 @@
+import type { InitialPostState } from '@/pages/Posts/edit'
 import type {
   IPostListParam,
   IPostListResponse,
@@ -15,6 +16,20 @@ export function postListRequest(params: IPostListParam) {
 export function postByIdRequest(id: string) {
   return request<IPostModel>(`/post/${id}`, {
     method: 'Get',
+  })
+}
+
+export async function postCreateRequest(post: InitialPostState) {
+  return request('/post', {
+    method: 'POST',
+    data: post,
+  })
+}
+
+export async function postUpdateRequest(post: InitialPostState, id: string) {
+  return request(`/post/${id}`, {
+    method: 'PUT',
+    data: post,
   })
 }
 
