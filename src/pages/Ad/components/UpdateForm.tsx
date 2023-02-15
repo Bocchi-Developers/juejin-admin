@@ -16,6 +16,7 @@ export const UpdateForm = (props: any) => {
     values,
     actionRef,
   } = props
+  console.log(values, 'values')
   const name = reqName(values.phoUrl)
   const newValues: any = objBlank(values)
     ? {
@@ -60,7 +61,13 @@ export const UpdateForm = (props: any) => {
       onCancel={() => onCancel()}
       footer={null}
     >
-      <Form onFinish={onFinish}>
+      <Form
+        onFinish={onFinish}
+        initialValues={{
+          adHref: `${values.adHref}`,
+          putAdHref: `${values.putAdHref}`,
+        }}
+      >
         <Form.Item label="图片上传" name="phoUrl" getValueFromEvent={normFile}>
           <Upload
             {...lists}
