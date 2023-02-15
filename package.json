@@ -39,15 +39,19 @@
     "@ant-design/icons": "^4.7.0",
     "@ant-design/pro-components": "^2.0.1",
     "@innei/bump-version": "^1.5.9",
-    "@suemor/prettier": "^1.1.0",
     "@types/js-cookie": "^3.0.2",
     "@umijs/max": "^4.0.51",
     "antd": "^5.0.0",
+    "clsx": "^1.2.1",
     "cz-git": "^1.4.1",
+    "dayjs": "^1.11.7",
     "js-cookie": "^3.0.1",
-    "react-message-popup": "^1.0.0"
+    "react-message-popup": "^1.0.0",
+    "vditor": "^3.9.0"
   },
   "devDependencies": {
+    "@suemor/eslint-config-react-ts": "^1.1.0",
+    "@suemor/prettier": "^1.1.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "cross-env": "^7.0.3",

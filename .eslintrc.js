@@ -1,3 +1,1 @@
-module.exports = {
-  extends: require.resolve('@umijs/max/eslint'),
-}
+module.exports = require('@suemor/eslint-config-react-ts')
