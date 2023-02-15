@@ -72,13 +72,13 @@ export const UpdateForm = (props: any) => {
             <PlusOutlined />
           </Upload>
         </Form.Item>
-        <Form.Item label="adHref" name="adHref" labelCol={{ span: 5 }}>
+        <Form.Item label="广告链接" name="adHref">
           <Input />
         </Form.Item>
-        <Form.Item label="putAdHref" name="putAdHref">
+        <Form.Item label="发布链接" name="putAdHref">
           <Input />
         </Form.Item>
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
           <Button type="primary" htmlType="submit">
             提交
           </Button>

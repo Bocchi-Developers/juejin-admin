@@ -72,13 +72,23 @@ export const TableList: React.FC<unknown> = () => {
       ),
     },
     {
-      title: 'adHref',
+      title: '广告链接',
       dataIndex: 'adHref',
       valueType: 'text',
+      render: (_: any) => (
+        <a href={_} target="_blank">
+          {_}
+        </a>
+      ),
     },
     {
-      title: 'putAdHref',
+      title: '发布链接',
       dataIndex: 'putAdHref',
+      render: (_: any) => (
+        <a href={_} target="_blank">
+          {_}
+        </a>
+      ),
     },
     {
       title: '操作',
