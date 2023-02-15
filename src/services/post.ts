@@ -17,3 +17,9 @@ export function postByIdRequest(id: string) {
     method: 'Get',
   })
 }
+
+export function postDeleteRequest(id: string) {
+  return request(`/post/${id}`, {
+    method: 'Delete',
+  })
+}

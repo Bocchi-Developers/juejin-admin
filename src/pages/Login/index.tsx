@@ -3,11 +3,11 @@ import React from 'react'
 import { flushSync } from 'react-dom'
 import message from 'react-message-popup'
 
-import { ILoginForm, login } from '@/services/user'
+import type { ILoginForm } from '@/services/user'
+import { login } from '@/services/user'
 import { setToken } from '@/utils/cookie'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { history } from '@umijs/max'
-import { useModel } from '@umijs/max'
+import { history, useModel } from '@umijs/max'
 
 const Login: React.FC = () => {
   const { initialState, setInitialState } = useModel('@@initialState')
@@ -49,7 +49,7 @@ const Login: React.FC = () => {
       >
         <div className="flex flex-col">
           <img src="./logo.svg" alt="logo" className="w-12 self-center" />
-          <h1 className="text-3xl text-center">掘金后台</h1>
+          <h1 className="text-3xl text-center my-3">掘金后台</h1>
         </div>
         <Form.Item
           name="username"
