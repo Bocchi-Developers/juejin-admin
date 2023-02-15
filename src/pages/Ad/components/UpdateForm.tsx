@@ -72,7 +72,7 @@ export const UpdateForm = (props: any) => {
             <PlusOutlined />
           </Upload>
         </Form.Item>
-        <Form.Item label="adHref" name="adHref">
+        <Form.Item label="adHref" name="adHref" labelCol={{ span: 5 }}>
           <Input />
         </Form.Item>
         <Form.Item label="putAdHref" name="putAdHref">
