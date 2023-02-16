@@ -6,3 +6,23 @@ export function getCategoryRequest() {
     method: 'Get',
   })
 }
+
+export function deleteCategoryRequest(id: string) {
+  return request(`/category/${id}`, {
+    method: 'Delete',
+  })
+}
+
+export async function createCategoryRequest(category: CategoryModel) {
+  return request('/category', {
+    method: 'POST',
+    data: category,
+  })
+}
+
+export async function updateCategoryRequest(post: CategoryModel, id: string) {
+  return request(`/category/${id}`, {
+    method: 'PUT',
+    data: post,
+  })
+}

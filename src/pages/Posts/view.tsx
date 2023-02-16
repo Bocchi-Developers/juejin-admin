@@ -54,7 +54,7 @@ const View = () => {
       title: '分类',
       dataIndex: 'category',
       width: 100,
-      render: (_, { category }) => <span>{category.name}</span>,
+      render: (_, { category }) => <span>{category?.name || '暂无'}</span>,
     },
     {
       title: '标签',
@@ -155,6 +155,7 @@ const View = () => {
         columns={columns}
         dataSource={data}
         onChange={handleTableChange}
+        rowKey={({ _id }) => _id || 'uid'}
       />
     </ContentLayout>
   )
