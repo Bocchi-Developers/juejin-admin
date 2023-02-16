@@ -78,6 +78,21 @@ const View = () => {
       ),
     },
     {
+      title: '封面',
+      dataIndex: 'cover',
+      width: 100,
+      render: (_, { cover }) => {
+        if (!cover) {
+          return <span>暂无</span>
+        }
+        return (
+          <a href={cover} target="_blank">
+            点击查看
+          </a>
+        )
+      },
+    },
+    {
       title: '广告',
       dataIndex: 'ad',
       width: 80,

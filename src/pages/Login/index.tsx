@@ -3,6 +3,7 @@ import React from 'react'
 import { flushSync } from 'react-dom'
 import message from 'react-message-popup'
 
+import { RoutePath } from '@/router/name'
 import type { ILoginForm } from '@/services/user'
 import { login } from '@/services/user'
 import { setToken } from '@/utils/cookie'
@@ -29,7 +30,7 @@ const Login: React.FC = () => {
     setToken(data.token)
     await fetchUserInfo()
     message.success('登录成功')
-    history.push('/')
+    history.push(RoutePath.POSTS_VIEW)
   }
 
   return (

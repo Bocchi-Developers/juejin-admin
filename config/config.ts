@@ -1,7 +1,7 @@
 import { defineConfig } from '@umijs/max'
 
+import routes from '../src/router/routes'
 import defaultSettings from './defaultSettings'
-import routes from './routes'
 
 const { UMI_ENV } = process.env
 const isDev = UMI_ENV === 'dev'

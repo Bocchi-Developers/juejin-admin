@@ -17,6 +17,7 @@ import { message } from 'react-message-popup'
 import type { VdRefObject } from '@/components/Editor'
 import { Editor } from '@/components/Editor'
 import { ContentLayout } from '@/components/layouts/content'
+import { RoutePath } from '@/router/name'
 import { getCategoryRequest } from '@/services/category'
 import {
   postByIdRequest,
@@ -100,7 +101,7 @@ const Edit = () => {
       message.success('创建成功')
     }
 
-    nav('/posts/view')
+    nav(RoutePath.POSTS_VIEW)
   }
 
   const fetchPost = async () => {
@@ -186,24 +187,22 @@ const EditDrawer: FC<EditDrawerProps> = ({
   }
   return (
     <Drawer
-      title="发布文章"
+      title={update ? '更新文章' : '发布文章'}
       width={400}
       onClose={onClose}
       open={open}
       bodyStyle={{ paddingBottom: 80 }}
       extra={
         <Space>
-          <Form.Item>
-            <Button
-              onClick={() => {
-                form.submit()
-              }}
-              type="primary"
-              htmlType="submit"
-            >
-              {update ? '确认更新' : '确认发布'}
-            </Button>
-          </Form.Item>
+          <Button
+            onClick={() => {
+              form.submit()
+            }}
+            type="primary"
+            htmlType="submit"
+          >
+            {update ? '确认更新' : '确认发布'}
+          </Button>
         </Space>
       }
     >

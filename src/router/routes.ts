@@ -55,5 +55,3 @@
     redirect: '/user',
   },
 ]
-
-// <IdcardOutlined />
