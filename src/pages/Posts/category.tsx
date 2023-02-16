@@ -57,6 +57,7 @@ const Category = () => {
         <Space size={'middle'} className="cursor-pointer">
           <a
             onClick={() => {
+              // FIXME
               setDefaultValue({
                 _id,
                 name,

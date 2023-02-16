@@ -1,7 +1,7 @@
 import { Button, Popconfirm, Table, Tag } from 'antd'
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table'
 import clsx from 'clsx'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { message } from 'react-message-popup'
 
 import { ContentLayout } from '@/components/layouts/content'
