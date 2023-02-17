@@ -1,4 +1,5 @@
-import { Avatar, Dropdown, MenuProps, Space } from 'antd'
+import type { MenuProps } from 'antd'
+import { Avatar, Dropdown, Space } from 'antd'
 import React from 'react'
 import { message } from 'react-message-popup'
 

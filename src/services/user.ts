@@ -1,4 +1,4 @@
-import { LoginReponseType, UserModel } from '@/types/api/user'
+import type { LoginReponseType, UserModel } from '@/types/api/user'
 import { request } from '@umijs/max'
 
 export interface ILoginForm {

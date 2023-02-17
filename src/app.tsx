@@ -1,14 +1,14 @@
 // 运行时配置
 
 import type { Settings as LayoutSettings } from '@ant-design/pro-components'
-import { RunTimeLayoutConfig } from '@umijs/max'
 import { history } from '@umijs/max'
+import type { RunTimeLayoutConfig } from '@umijs/max'
 
 import defaultSettings from '../config/defaultSettings'
 import RightContent from './components/RightContent'
 import { errorConfig } from './services/requestErrorConfig'
 import { queryCurrentUser } from './services/user'
-import { InitialStateType } from './types/initial'
+import type { InitialStateType } from './types/initial'
 
 const loginPath = '/login'
 

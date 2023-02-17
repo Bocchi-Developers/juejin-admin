@@ -33,6 +33,7 @@
     "prepare": "husky install",
     "setup": "max setup",
     "start": "cross-env UMI_ENV=pre max preview",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore . --fix",
     "release": "vv"
   },
   "dependencies": {

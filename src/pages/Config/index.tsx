@@ -1,7 +1,6 @@
-import { Button, Form, Input, Modal, Popconfirm, Space, Table } from 'antd'
+import { Button, Popconfirm, Space, Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
-import type { FC } from 'react'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import message from 'react-message-popup'
 
 import { ContentLayout } from '@/components/layouts/content'
@@ -13,9 +12,13 @@ import {
 } from '@/services/config'
 import type { TabModel } from '@/types/api/tab'
 
+import { CoreModalForm } from './components/ConfigModalForm'
+import { TabModalForm } from './components/TabModalForm'
+
 const Config = () => {
   const [tab, settab] = useState<TabModel[]>()
-  const [modalOpen, setModalOpen] = useState(false)
+  const [tabModalOpen, setTabModalOpen] = useState(false)
+  const [coreModalOpen, setCoreModalOpen] = useState(false)
   const [defaultValue, setDefaultValue] = useState<TabModel>()
   const fetchtabData = async () => {
     const { data } = await getTabsRequest()
@@ -29,7 +32,7 @@ const Config = () => {
       await createTabRequest(values)
     }
     fetchtabData()
-    setModalOpen(false)
+    setTabModalOpen(false)
     message.success('操作成功')
   }
 
@@ -70,7 +73,7 @@ const Config = () => {
                   slug,
                   tag,
                 })
-                setModalOpen(true)
+                setTabModalOpen(true)
               }}
             >
               编辑
@@ -96,15 +99,26 @@ const Config = () => {
   return (
     <ContentLayout
       actionsElement={
-        <Button
-          type="primary"
-          onClick={() => {
-            setDefaultValue(undefined)
-            setModalOpen(true)
-          }}
-        >
-          新增
-        </Button>
+        <Space>
+          <Button
+            type="primary"
+            danger
+            onClick={() => {
+              setCoreModalOpen(true)
+            }}
+          >
+            核心配置
+          </Button>
+          <Button
+            type="primary"
+            onClick={() => {
+              setDefaultValue(undefined)
+              setTabModalOpen(true)
+            }}
+          >
+            新增
+          </Button>
+        </Space>
       }
     >
       <Table
@@ -113,80 +127,18 @@ const Config = () => {
         pagination={false}
         rowKey={({ _id }) => _id || 'uid'}
       />
-      <ModalForm
-        modalOpen={modalOpen}
-        setModalOpen={setModalOpen}
+      <TabModalForm
+        tabModalOpen={tabModalOpen}
+        setTabModalOpen={setTabModalOpen}
         defaultValue={defaultValue}
         obSubmit={onSubmit}
       />
+
+      <CoreModalForm
+        coreModalOpen={coreModalOpen}
+        setCoreModalOpen={setCoreModalOpen}
+      />
     </ContentLayout>
-  )
-}
-
-interface ModalFormProps {
-  modalOpen: boolean
-  setModalOpen: (e: boolean) => void
-  defaultValue?: TabModel
-  obSubmit?: (values: TabModel) => void
-}
-
-const ModalForm: FC<ModalFormProps> = ({
-  modalOpen,
-  setModalOpen,
-  defaultValue,
-  obSubmit,
-}) => {
-  const [form] = Form.useForm<TabModel>()
-  const isUpdate = useMemo(() => !!defaultValue, [defaultValue])
-
-  const handleCancel = () => {
-    setModalOpen(false)
-  }
-
-  useEffect(() => {
-    form.setFieldsValue({
-      title: defaultValue?.title,
-      slug: defaultValue?.slug,
-      tag: defaultValue?.tag,
-    })
-  }, [defaultValue])
-  return (
-    <Modal
-      title={isUpdate ? '编辑 Tab 栏' : '新增 Tab 栏'}
-      open={modalOpen}
-      onOk={() => form.submit()}
-      onCancel={handleCancel}
-      destroyOnClose
-    >
-      <Form
-        name="basic"
-        wrapperCol={{ span: 18 }}
-        style={{ maxWidth: 600 }}
-        onFinish={obSubmit}
-        form={form}
-        className="mt-6"
-      >
-        <Form.Item
-          name="title"
-          label="名称"
-          rules={[{ required: true, message: '请输入名称' }]}
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          name="slug"
-          label="路径"
-          rules={[{ required: true, message: '请输入路径' }]}
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item name="tag" label="标签">
-          <Input />
-        </Form.Item>
-      </Form>
-    </Modal>
   )
 }
 

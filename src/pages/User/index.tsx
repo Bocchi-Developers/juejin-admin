@@ -1,4 +1,4 @@
-import { InitialModel } from '@/types/initial'
+import type { InitialModel } from '@/types/initial'
 import { useModel } from '@umijs/max'
 
 const User = () => {
