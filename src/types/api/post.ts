@@ -57,3 +57,28 @@ interface User {
   avatar: string
   introduce: string
 }
+
+export interface IPostForm {
+  tags: string[]
+  cover: Cover
+  category: string
+  ad: boolean
+}
+
+interface Cover {
+  fileList: File[]
+}
+
+interface File {
+  uid: string
+  lastModified: number
+  lastModifiedDate: string
+  name: string
+  size: number
+  type: string
+  percent: number
+  status: string
+  response: {
+    data: string
+  }
+}

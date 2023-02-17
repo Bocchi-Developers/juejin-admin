@@ -1,6 +1,6 @@
 import type { Settings as LayoutSettings } from '@ant-design/pro-components'
 
-import { UserModel } from './api/user'
+import type { UserModel } from './api/user'
 
 export interface InitialStateType {
   currentUser?: UserModel
