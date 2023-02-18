@@ -24,6 +24,6 @@ export default defineConfig({
   define: {
     API_URL: isDev
       ? 'http://127.0.0.1:7498'
-      : 'https://juejin-core-production.up.railway.app/api/v1',
+      : 'http://api-juejin.suemor.com/api/v1',
   },
 })
