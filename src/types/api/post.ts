@@ -69,7 +69,7 @@ interface Cover {
   fileList: File[]
 }
 
-interface File {
+export interface File {
   uid: string
   lastModified: number
   lastModifiedDate: string
