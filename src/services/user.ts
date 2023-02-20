@@ -18,3 +18,23 @@ export async function queryCurrentUser() {
     method: 'GET',
   })
 }
+
+export async function queryUserName(name: string) {
+  return request<UserModel>(`/user/${name}`, {
+    method: 'GET',
+  })
+}
+
+export async function userCreateRequest(user: UserModel) {
+  return request('/user/register', {
+    method: 'POST',
+    data: user,
+  })
+}
+
+export async function userUpdateRequest(user: UserModel) {
+  return request(`/user`, {
+    method: 'PUT',
+    data: user,
+  })
+}

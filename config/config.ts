@@ -10,6 +10,7 @@ export default defineConfig({
   antd: {},
   access: {},
   model: {},
+  history: { type: 'hash' },
   initialState: {},
   request: {
     dataField: '',
@@ -24,6 +25,6 @@ export default defineConfig({
   define: {
     API_URL: isDev
       ? 'http://127.0.0.1:7498'
-      : 'https://juejin-core-production.up.railway.app/api/v1',
+      : 'https://api-juejin.suemor.com/api/v1',
   },
 })
