@@ -4,13 +4,13 @@ import React from 'react'
 
 import type { AD } from '@/services/advertisement'
 import { advAdd } from '@/services/advertisement'
-import type { ProDescriptionsItemProps } from '@ant-design/pro-components'
+import type { ProColumns } from '@ant-design/pro-components'
 import { ProTable } from '@ant-design/pro-components'
 
 interface CreateFormProps {
   modalVisible: boolean
   onCancel: () => void
-  columns: ProDescriptionsItemProps[]
+  columns: ProColumns[]
   advUrl: string
   actionRef: any
 }
