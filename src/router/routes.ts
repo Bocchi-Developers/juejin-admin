@@ -1,7 +1,9 @@
-﻿export default [
+﻿import { RoutePath } from './name'
+
+export default [
   {
     name: 'login',
-    path: '/login',
+    path: RoutePath.LOGIN,
     layout: false,
     component: './Login',
   },
@@ -11,18 +13,18 @@
     icon: 'EditOutlined',
     routes: [
       {
-        path: '/posts/view',
+        path: RoutePath.POSTS_VIEW,
         name: '管理',
         component: './Posts/view',
       },
       {
-        path: '/posts/edit',
+        path: RoutePath.POSTS_EDIT,
         name: '编写',
         icon: 'EditOutlined',
         component: './Posts/edit',
       },
       {
-        path: '/posts/category',
+        path: RoutePath.POSTS_CATEGORY,
         name: '分类',
         access: 'canAdmin',
         component: './Posts/category',
@@ -30,21 +32,21 @@
     ],
   },
   {
-    path: '/ad',
+    path: RoutePath.AD,
     name: '广告',
     access: 'canAdmin',
     icon: 'NotificationOutlined',
     component: './Ad',
   },
   {
-    path: '/config',
+    path: RoutePath.CONFIG,
     name: '网站配置',
     access: 'canAdmin',
     icon: 'ToolOutlined',
     component: './Config',
   },
   {
-    path: '/user',
+    path: RoutePath.USER,
     name: '用户',
     access: 'canAdmin',
     icon: 'IdcardOutlined',
@@ -55,5 +57,3 @@
     redirect: '/user',
   },
 ]
-
-// <IdcardOutlined />
