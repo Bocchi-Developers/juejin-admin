@@ -81,11 +81,8 @@ export const TableList: React.FC<unknown> = () => {
     {
       title: '发布链接',
       dataIndex: 'putAdHref',
-      render: (_: any) => (
-        <a href={_} target="_blank">
-          {_}
-        </a>
-      ),
+      copyable: true,
+      ellipsis: true,
     },
     {
       title: '操作',
