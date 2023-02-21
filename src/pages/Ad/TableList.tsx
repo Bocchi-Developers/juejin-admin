@@ -6,10 +6,7 @@ import React, { useRef, useState } from 'react'
 import { advDelete, advFind } from '@/services/advertisement'
 import { getToken } from '@/utils/cookie'
 import { PlusOutlined } from '@ant-design/icons'
-import type {
-  ActionType,
-  ProDescriptionsItemProps,
-} from '@ant-design/pro-components'
+import type { ActionType, ProColumns } from '@ant-design/pro-components'
 import { PageContainer, ProTable } from '@ant-design/pro-components'
 
 import CreateForm from './components/CreateForm'
@@ -24,7 +21,7 @@ export const TableList: React.FC<unknown> = () => {
   const [fileList, setFileList] = useState<UploadFile[]>([])
   const [advUrl, setAdvUrl] = useState<string>('')
 
-  const columns: ProDescriptionsItemProps[] = [
+  const columns: ProColumns[] = [
     {
       title: '图片上传',
       hideInTable: true,
@@ -84,16 +81,14 @@ export const TableList: React.FC<unknown> = () => {
     {
       title: '发布链接',
       dataIndex: 'putAdHref',
-      render: (_: any) => (
-        <a href={_} target="_blank">
-          {_}
-        </a>
-      ),
+      copyable: true,
+      ellipsis: true,
     },
     {
       title: '操作',
       dataIndex: 'option',
       valueType: 'option',
+      width: 100,
       render: (_, record) => (
         <>
           <a
