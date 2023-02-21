@@ -1,3 +1,5 @@
+import type { File } from './post'
+
 export interface LoginReponseType {
   username: string
   token: string
@@ -14,6 +16,14 @@ export interface UserModel {
   username: string
   admin: boolean
   created: string
-  avatar: string
+  avatar: string | Avatar
   introduce: string
+  password?: string
+  create?: boolean
 }
+
+interface Avatar {
+  fileList: File[]
+}
+
+export const TEMP_PASSWORD = 'TEMP_PASSWORD'

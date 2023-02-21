@@ -46,14 +46,7 @@ export default [
     component: './Config',
   },
   {
-    path: RoutePath.USER,
-    name: '用户',
-    access: 'canAdmin',
-    icon: 'IdcardOutlined',
-    component: './User',
-  },
-  {
     path: '/',
-    redirect: '/user',
+    redirect: RoutePath.CONFIG,
   },
 ]

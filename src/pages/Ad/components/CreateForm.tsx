@@ -1,7 +1,6 @@
 import { Modal } from 'antd'
 import type { PropsWithChildren } from 'react'
 import React from 'react'
-
 import type { AD } from '@/services/advertisement'
 import { advAdd } from '@/services/advertisement'
 import type { ProColumns } from '@ant-design/pro-components'
