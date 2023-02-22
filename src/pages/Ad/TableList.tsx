@@ -4,6 +4,7 @@ import type { UploadFile } from 'antd/es/upload/interface'
 import React, { useRef, useState } from 'react'
 
 import { advDelete, advFind } from '@/services/advertisement'
+import { UPLOAD_URL } from '@/services/upload'
 import { getToken } from '@/utils/cookie'
 import { PlusOutlined } from '@ant-design/icons'
 import type { ActionType, ProColumns } from '@ant-design/pro-components'
@@ -29,7 +30,7 @@ export const TableList: React.FC<unknown> = () => {
         const lists: UploadProps = {
           name: 'file',
           method: 'POST',
-          action: 'http://127.0.0.1:7498/upload/album',
+          action: UPLOAD_URL,
           onChange(info) {
             setFileList([info.file])
             if (info.file.response) {
