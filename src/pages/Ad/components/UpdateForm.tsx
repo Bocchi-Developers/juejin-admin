@@ -4,6 +4,7 @@ import type { UploadFile } from 'antd/es/upload/interface'
 import React, { useState } from 'react'
 
 import { advUpdate } from '@/services/advertisement'
+import { UPLOAD_URL } from '@/services/upload'
 import { getToken } from '@/utils/cookie'
 import { objBlank, reqName } from '@/utils/format'
 import { PlusOutlined } from '@ant-design/icons'
@@ -16,7 +17,6 @@ export const UpdateForm = (props: any) => {
     values,
     actionRef,
   } = props
-  console.log(values, 'values')
   const name = reqName(values.phoUrl)
   const newValues: any = objBlank(values)
     ? {
@@ -30,7 +30,7 @@ export const UpdateForm = (props: any) => {
   const lists: UploadProps = {
     name: 'file',
     method: 'POST',
-    action: 'http://127.0.0.1:7498/upload/album',
+    action: UPLOAD_URL,
     headers: {
       authorization: 'authorization-text',
     },

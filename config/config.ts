@@ -19,6 +19,7 @@ export default defineConfig({
     locale: true,
     ...defaultSettings,
   },
+  links: [{ rel: 'icon', href: '/logo.svg' }],
   routes,
   npmClient: 'pnpm',
   tailwindcss: {},
